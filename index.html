@@ -1,32 +1,152 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Introductory Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            color: white;
+            margin: 1rem;
+        }
+
+        .about {
+            flex: 1;
+            margin-right: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        .about h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: #555;
+        }
+
+        .contact-form button {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="welcome-message">
-            <h1>Hello peoples of Multiverse!</h1>
-            <p>Welcome to the webpage!</p>
+    <div class="main-container">
+        <div class="about">
+            <h1>About Me</h1>
+            <p>HelloWorld! Welcome to my website! This page is designed for you to easily send me messages and get to know more about me. Feel free to explore and contact me if you have any questions or just want to connect!, It's sunayan chaulagian signing off. </p>
         </div>
         <div class="contact-form">
-            <h2>Message:</h2>
+            <h2>Contact Me</h2>
             <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="9842aa07-2e39-4586-a7b8-6b4e727c479c">
+                <input type="hidden" name="access_key" value="9842aa07-2e39-4586-a7b8-6b4e727c479c">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+
                 <button type="submit">Send</button>
             </form>
         </div>
     </div>
+    <footer>
+        &copy; 2024, There are no rules here. We're just trying to learn how to apply them as we go along.
+    </footer>
 </body>
 </html>
