@@ -1,155 +1,389 @@
-<?php
-header('Content-Type: text/html; charset=UTF-8');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sunayanchaulagian.com.np</title>
-    <meta name="description" content="This is the site with some information about me and some of the things i have done.">
-    <meta name="keywords" content="sunayan,sunayan chaulagain,sunayanchaulagain.com.np">
-    <meta name="author" content="sunayan chaulagain">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('background.jpg') no-repeat center center;
-            background-attachment: fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
 
-        .main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 2rem;
-            color: white;
-            margin: 1rem;
-        }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        .about {
-            flex: 1;
-            margin-right: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1.5rem;
-            border-radius: 8px;
-            color: #333;
-        }
+    <title>
+        Sunayan Chaulagain | Web Developer Portfolio
+    </title>
 
-        .about h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+    <meta name="description"
+          content="Official portfolio website of Sunayan Chaulagain, a web developer and cybersecurity enthusiast from Nepal.">
 
-        .about p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
+    <meta name="keywords"
+          content="Sunayan Chaulagain, Sunayan, cybersecurity, web developer Nepal, portfolio">
 
-        .contact-form {
-            flex: 1;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
+    <meta name="author"
+          content="Sunayan Chaulagain">
 
-        .contact-form h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
+    <meta name="robots"
+          content="index, follow">
 
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: white;
-        }
+    <!-- Open Graph -->
+    <meta property="og:title"
+          content="Sunayan Chaulagain | Portfolio">
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.9);
-            color: black;
-        }
+    <meta property="og:description"
+          content="Official portfolio website of Sunayan Chaulagain.">
 
-        .contact-form input::placeholder, .contact-form textarea::placeholder {
-            color: #555;
-        }
+    <meta property="og:type"
+          content="website">
 
-        .contact-form button {
-            width: 100%;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 0.75rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+    <meta property="og:url"
+          content="https://www.sunayanchaulagain.com.np">
 
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
+    <meta property="og:image"
+          content="https://www.sunayanchaulagain.com.np/background.jpg">
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.8);
-        }
+    <!-- Favicon -->
+    <link rel="icon"
+          href="favicon.ico"
+          type="image/x-icon">
 
-        @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about {
-                margin-right: 0;
-                margin-bottom: 2rem;
-            }
-        }
-    </style>
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sunayan Chaulagain",
+      "url": "https://www.sunayanchaulagain.com.np",
+      "jobTitle": "Web Developer",
+      "sameAs": [
+        "https://github.com/sunayan88"
+      ]
+    }
     </script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial,sans-serif;
+            background:url('background.jpg') no-repeat center center fixed;
+            background-size:cover;
+            color:white;
+            line-height:1.6;
+        }
+
+        .overlay{
+            background:rgba(0,0,0,0.75);
+            min-height:100vh;
+        }
+
+        .main-container{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:2rem;
+            padding:4rem 8%;
+            flex-wrap:wrap;
+        }
+
+        .about{
+            flex:1;
+            min-width:300px;
+            background:rgba(255,255,255,0.95);
+            color:#222;
+            padding:2rem;
+            border-radius:12px;
+        }
+
+        .about h1{
+            font-size:3rem;
+            margin-bottom:1rem;
+            color:#111;
+        }
+
+        .about h2{
+            font-size:1.5rem;
+            margin-bottom:1rem;
+            color:#444;
+        }
+
+        .about p{
+            font-size:1.1rem;
+        }
+
+        .social-links{
+            margin-top:1.5rem;
+        }
+
+        .social-links a{
+            display:inline-block;
+            margin-right:1rem;
+            text-decoration:none;
+            color:white;
+            background:#007BFF;
+            padding:0.7rem 1rem;
+            border-radius:6px;
+            transition:0.3s;
+        }
+
+        .social-links a:hover{
+            background:#0056b3;
+        }
+
+        .contact-form{
+            flex:1;
+            min-width:300px;
+            background:rgba(0,0,0,0.85);
+            padding:2rem;
+            border-radius:12px;
+        }
+
+        .contact-form h2{
+            margin-bottom:1.5rem;
+        }
+
+        .contact-form label{
+            display:block;
+            margin-bottom:0.5rem;
+            font-weight:bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea{
+            width:100%;
+            padding:0.8rem;
+            margin-bottom:1rem;
+            border:none;
+            border-radius:6px;
+            font-size:1rem;
+        }
+
+        .contact-form button{
+            width:100%;
+            padding:1rem;
+            background:#007BFF;
+            color:white;
+            border:none;
+            border-radius:6px;
+            font-size:1rem;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .contact-form button:hover{
+            background:#0056b3;
+        }
+
+        .projects{
+            padding:4rem 8%;
+        }
+
+        .projects h2{
+            text-align:center;
+            font-size:2.5rem;
+            margin-bottom:2rem;
+        }
+
+        .project-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:2rem;
+        }
+
+        .project-card{
+            background:rgba(255,255,255,0.95);
+            color:#222;
+            padding:2rem;
+            border-radius:12px;
+            transition:0.3s;
+        }
+
+        .project-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .project-card h3{
+            margin-bottom:1rem;
+        }
+
+        .project-card p{
+            margin-bottom:1.5rem;
+        }
+
+        .project-card a{
+            text-decoration:none;
+            background:#007BFF;
+            color:white;
+            padding:0.7rem 1rem;
+            border-radius:6px;
+            display:inline-block;
+        }
+
+        .project-card a:hover{
+            background:#0056b3;
+        }
+
+        footer{
+            text-align:center;
+            padding:2rem;
+            background:rgba(0,0,0,0.9);
+        }
+
+        @media(max-width:768px){
+
+            .main-container{
+                flex-direction:column;
+            }
+
+            .about h1{
+                font-size:2.2rem;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <div class="main-container">
+
+<div class="overlay">
+
+    <section class="main-container">
+
         <div class="about">
-            <h1>About Me</h1>
-            <p>Hello ?? Welcome to the site! This page is designed for you to easily contact me! Feel free to explore and contact me if you have any questions or just want to connect!, It's SUNAYAN CHAULAGAIN signing off. </p>
+
+            <h1>Sunayan Chaulagain</h1>
+
+            <h2>
+                Web Developer & Cybersecurity Enthusiast
+            </h2>
+
+            <p>
+                Hello! I'm Sunayan Chaulagain, a developer and
+                cybersecurity enthusiast from Nepal.
+                This portfolio showcases some of my projects,
+                technical interests, and ways to connect with me.
+            </p>
+
+            <div class="social-links">
+
+                <a href="https://github.com/sunayan88"
+                   target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
         </div>
+
         <div class="contact-form">
+
             <h2>Contact Me</h2>
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="9842aa07-2e39-4586-a7b8-6b4e727c479c">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-                <label for="email">Email ID,Phone Number or any other contact info:</label>
-                <input type="text" id="email" name="email" placeholder="Enter your email" required>
+            <form action="https://api.web3forms.com/submit"
+                  method="POST">
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+                <input type="hidden"
+                       name="access_key"
+                       value="9842aa07-2e39-4586-a7b8-6b4e727c479c">
 
-                <button type="submit">Send</button>
+                <label>Name</label>
+
+                <input type="text"
+                       name="name"
+                       placeholder="Enter your name"
+                       required>
+
+                <label>Email / Phone</label>
+
+                <input type="text"
+                       name="email"
+                       placeholder="Enter contact info"
+                       required>
+
+                <label>Message</label>
+
+                <textarea name="message"
+                          rows="5"
+                          placeholder="Write your message"
+                          required></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
             </form>
+
         </div>
-    </div>
+
+    </section>
+
+    <section class="projects">
+
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <h3>DataFort</h3>
+
+                <p>
+                    A cybersecurity-focused project related
+                    to secure data handling and file protection.
+                </p>
+
+                <a href="https://github.com/sunayan88/Datafort"
+                   target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Simple Ransomware Simulation</h3>
+
+                <p>
+                    Educational cybersecurity project demonstrating
+                    ransomware-style encryption concepts.
+                </p>
+
+                <a href="https://github.com/sunayan88/simple_ransomware"
+                   target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>Secure File Transfer</h3>
+
+                <p>
+                    Secure file transfer application focused on
+                    protected communication and encryption.
+                </p>
+
+                <a href="https://github.com/sunayan88/secure_file_transfer"
+                   target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <footer>
-        &copy; 2024, There are no rules here. We're just trying to learn how to apply them as we go along.
+
+        © 2026 Sunayan Chaulagain
+
     </footer>
+
+</div>
+
 </body>
 </html>
